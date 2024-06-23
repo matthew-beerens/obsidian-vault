@@ -77,6 +77,8 @@ In enterprise environments it common to find powershell logging mechanisms enabl
 
 `(Get-PSReadlineOption).HistorySavePath` get history information path location from PSReadline module, `Clear-History`  does not clear this files. Read this information and analyze carefully to gain hidden information. If some cases we may be able to repeat the steps we find in this file to gain access to another user with elevated privileges. 
 
+`Applications and Services Logs > Microsoft > Windows > PowerShell > Operational` - we can view these logs in the event view if we have an rdp connection to attempt to harvest credentials.
+
 *Administrators can prevent PSReadline from recording commands by setting the -HistorySaveStyle option to SaveNothing with the Set-PSReadlineOption Cmdlet. Alternatively, they can clear the history file manually*
 
 #### New Users Obtained
@@ -88,3 +90,13 @@ We will need GUI access to use the user account. If we already have access to a 
 `Runas` can be used as long as the user has ability to logon to the system. 
 
 This can be used with `local or dommain` accounts.
+
+#### Automated Enumeration
+
+We can use tools like `WinPEAS`, `Seatbelt`, and `JAWS` to automated the above methods to get a comprehensive view of the system.
+
+Automated tools can be blocked by AV so if this doesn't work resort to manual or other automated tools.
+
+`sudo apt install peass` - install the peas tools on kali
+
+`cp /usr/share/peass/winpeas/winPEASx64.exe .` win peas can be found at this directory and copies to the current directory for ease of usage and serving to target host

