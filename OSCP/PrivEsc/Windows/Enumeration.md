@@ -17,7 +17,7 @@ we need to obtain information about the system the we have gained access to in o
 
 `whoami` to gain username and hostname
 
-`whoami /groups` gain information about groups our current user is a member of
+`whoami /groups | /priv` gain information about groups our current user is a member of
 
 `net user` & `net group` gain information about other users and groups on the system
 
@@ -47,6 +47,9 @@ we need to obtain information about the system the we have gained access to in o
 
 `Get-Process -Id 8444 | Select-Object -Property ProcessName, Id, WS, Path` - get more information about particular object
 
+`Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}` get services running under the win32 service class and only read the name, state and pathname of running services - we should look for service binaries out side of system32, these binaries are managed and installed by users, which could result in poor permissions/management of binary
+
+`schtasks /query /fo LIST /v` - scheduled tasks on the system (can also use Get-ScheduledTask cmdlet)
 
 #### Files on the system
 

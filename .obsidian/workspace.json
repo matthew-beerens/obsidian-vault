@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Robotic programming/installation.md",
+                "file": "OSCP/PrivEsc/Linux/Enumeration.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 420.5
   },
   "right": {
     "id": "16e4843a1f6a1ac6",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Robotic programming/installation.md",
+                "file": "OSCP/PrivEsc/Linux/Enumeration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Robotic programming/installation.md",
+                "file": "OSCP/PrivEsc/Linux/Enumeration.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Robotic programming/installation.md"
+                "file": "OSCP/PrivEsc/Linux/Enumeration.md"
               }
             }
           },
@@ -145,7 +145,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 224.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -157,44 +158,45 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "749314899e7cc4b5",
+  "active": "12ab00290c96277a",
   "lastOpenFiles": [
-    "old notes.md",
-    "Meetings Minutes.md",
-    "Client Questions.md",
-    "Client minutes.md",
-    "Robotic programming/installation.md",
-    "Aaron meeting 2.md",
-    "Pasted image 20240315134801.png",
-    "OSCP/PrivEsc/Windows/Services.md",
-    "Robotic programming",
-    "OSCP/PrivEsc/Windows/Windows Privileges and Access Control Mechanisms.md",
-    "OSCP/PrivEsc/Windows/Changing Users (remote and local).md",
-    "OSCP/NTLM/Extract & Crack NTLM.md",
-    "OSCP/Misc/Transferring Files & Executing files.md",
-    "OSCP/NTLM/Extract & Crack Net-NTLMv2.md",
+    "OSCP/PrivEsc/Windows/Exploits.md",
+    "OSCP/PrivEsc/Linux/Enumeration.md",
+    "OSCP/PrivEsc/Linux",
     "OSCP/Bruteforce/Cracking.md",
+    "OSCP/NTLM/Passing NTLM.md",
+    "OSCP/NTLM/Extract & Crack NTLM.md",
+    "OSCP/NTLM/Extract & Crack Net-NTLMv2.md",
+    "OSCP/PrivEsc/Windows/Services.md",
+    "OSCP/PrivEsc/Windows/Scheduled Tasks.md",
     "OSCP/PrivEsc/Windows/Enumeration.md",
     "OSCP/Misc/PowerShell Commands.md",
+    "OSCP/Misc/Transferring Files & Executing files.md",
+    "OSCP/Public Exploits/Online Resources.md",
+    "OSCP/Public Exploits/Offline Resources.md",
+    "OSCP/PrivEsc/Windows/Changing Users (remote and local).md",
+    "OSCP/Misc/IP Tables.md",
+    "OSCP/Misc/ftp.md",
     "OSCP/Misc/Custom Binaries.md",
-    "OSCP/NTLM/Relaying Net-NTLMv2.md",
+    "OSCP/Misc/CMD.md",
+    "Hacking/Breaching active directory.md",
+    "Hacking/Active Directory.md",
+    "OSCP/PrivEsc/Windows/Windows Privileges and Access Control Mechanisms.md",
+    "OSCP/Wep App Assessment/File Upload Vulnerabilities.md",
+    "OSCP/Wep App Assessment/Directory Traversal.md",
+    "OSCP/Wep App Assessment/Cross-Site Scripting.md",
+    "OSCP/SQLi/Union SQLi.md",
+    "OSCP/SQLi/SQL Connections and Interaction.md",
+    "Pasted image 20240315134801.png",
+    "Robotic programming",
     "OSCP/PrivEsc/Linux",
     "OSCP/PrivEsc/Windows",
     "OSCP/PrivEsc",
-    "OSCP/NTLM/Passing NTLM.md",
-    "OSCP/Misc/CMD.md",
-    "OSCP/Bruteforce/Hydra.md",
     "OSCP/NTLM",
-    "OSCP/information gathering/Active/SMB Enumeration.md",
     "OSCP/Bruteforce",
-    "OSCP/Bruteforce.md",
-    "OSCP/Antivirus Evasion/Evasion.md",
-    "OSCP/Misc/ftp.md",
-    "OSCP/Misc/wine.md",
     "OSCP/Antivirus Evasion",
     "OSCP/Public Exploits/Fixing Exploits",
     "OSCP/Public Exploits",
-    "OSCP/Client-Side Attacks/Microsoft Office",
     "images/Pasted image 20230823162651.png",
     "images/Pasted image 20230725150046.png",
     "images/Pasted image 20230823161700.png",
