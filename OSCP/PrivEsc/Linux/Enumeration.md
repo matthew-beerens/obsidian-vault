@@ -77,10 +77,13 @@ Manual enumeration cannot be replaced by automated enumeration, and both should 
 `crontab -l` - user admin cronjobs that usually run as root that we could exploit
 - try also running `sudo crontab -l` - this will reveal scripts that run as root if the user does not have any at their user level.
 
+`grep "CRON" /var/log/syslog` - check sys log for cron logs
+
+`cat /var/log/cron.log`  - check cron log for cron jobs
+
 `dpkg -l` - list installed packages and software in an attempt to find versions that can be exploited with public exploits. `Different flavours of linux may have different commands for doing this e.g. redhat uses rpm`
 
 `find / -writable -type d 2>/dev/null` - list all writable directories on the system
-
 
 drive mounts - we should always check drive mounts with weak permissions for stashes of valuable information, we should also attempt to mount drives that have no yet been mounted at boot.
 
