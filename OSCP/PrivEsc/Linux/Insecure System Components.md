@@ -12,6 +12,8 @@
 
 `chmod u+s <filename>` - set the suid bit on the file
 
+`find / -perm -u=s -type f 2>/dev/null` - search for all files in the system with suid or guid set with the goal of executing a command or script as root.
+
 `If we find a file that has the suid bit set, and for some reason it is misconfigured we could use this binary to execute privileges`
 
 for example if `find` was misconfigured we could:
@@ -63,3 +65,4 @@ grab a suitable exploit, inspect it, and execute if valid. `for exploits that ne
 
 `file <binary>` - double check compilation ELF info for correct arch, etc.
 
+When it comes to Linux privesc check out the following site, its pretty good with various commands you can try out when you have to do local enum on a system https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/ and if you come across a system when something isnt installed to compile exploits then you can also try compiling on kali and transferring across to target.

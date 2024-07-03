@@ -96,7 +96,7 @@ drive mounts - we should always check drive mounts with weak permissions for sta
 `lsmod` - enumerate the loaded kernel modules (drivers), to find kernel modules we might be able to exploit
 `/sbin/modinfo <module>` - get more information about a kernel module we found interesting
 
-`find / -perm -u=s type f 2>/dev/null` - search for all files in the system with suid or guid set with the goal of executing a command or script as root.
+`find / -perm -u=s -type f 2>/dev/null` - search for all files in the system with suid or guid set with the goal of executing a command or script as root.
 
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md
 

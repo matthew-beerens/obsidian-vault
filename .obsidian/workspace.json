@@ -158,13 +158,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "12ab00290c96277a",
+  "active": "749314899e7cc4b5",
   "lastOpenFiles": [
-    "OSCP/PrivEsc/Linux/Insecure File Permissions.md",
-    "OSCP/PrivEsc/Linux/Insecure System Components.md",
-    "OSCP/Misc/RevShell Oneliners.md",
+    "OSCP/Port Redirection & SSH Tunnelling",
     "OSCP/PrivEsc/Linux/Enumeration.md",
+    "OSCP/PrivEsc/Linux/Insecure System Components.md",
+    "OSCP/PrivEsc/Linux/Insecure File Permissions.md",
     "OSCP/PrivEsc/Linux/Exposed Confidential Information.md",
+    "OSCP/Misc/RevShell Oneliners.md",
     "OSCP/Bruteforce/Hydra.md",
     "OSCP/Bruteforce/Cracking.md",
     "OSCP/Misc/Bash and SH Commands.md",
@@ -186,7 +187,6 @@
     "OSCP/Misc/Custom Binaries.md",
     "OSCP/Misc/CMD.md",
     "Hacking/Breaching active directory.md",
-    "Hacking/Active Directory.md",
     "Pasted image 20240315134801.png",
     "Robotic programming",
     "OSCP/PrivEsc/Linux",
