@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OSCP/PrivEsc/Linux/Insecure System Components.md",
+                "file": "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP/PrivEsc/Linux/Insecure System Components.md",
+                "file": "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP/PrivEsc/Linux/Insecure System Components.md",
+                "file": "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP/PrivEsc/Linux/Insecure System Components.md"
+                "file": "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md"
               }
             }
           },
@@ -158,11 +158,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "749314899e7cc4b5",
+  "active": "12ab00290c96277a",
   "lastOpenFiles": [
+    "OSCP/Port Redirection & SSH Tunnelling/Port Forwarding.md",
+    "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
+    "OSCP/PrivEsc/Linux/Insecure System Components.md",
     "OSCP/Port Redirection & SSH Tunnelling",
     "OSCP/PrivEsc/Linux/Enumeration.md",
-    "OSCP/PrivEsc/Linux/Insecure System Components.md",
     "OSCP/PrivEsc/Linux/Insecure File Permissions.md",
     "OSCP/PrivEsc/Linux/Exposed Confidential Information.md",
     "OSCP/Misc/RevShell Oneliners.md",
@@ -186,7 +188,6 @@
     "OSCP/Misc/ftp.md",
     "OSCP/Misc/Custom Binaries.md",
     "OSCP/Misc/CMD.md",
-    "Hacking/Breaching active directory.md",
     "Pasted image 20240315134801.png",
     "Robotic programming",
     "OSCP/PrivEsc/Linux",
@@ -196,7 +197,6 @@
     "OSCP/Bruteforce",
     "OSCP/Antivirus Evasion",
     "OSCP/Public Exploits/Fixing Exploits",
-    "OSCP/Public Exploits",
     "images/Pasted image 20230823162651.png",
     "images/Pasted image 20230725150046.png",
     "images/Pasted image 20230823161700.png",
