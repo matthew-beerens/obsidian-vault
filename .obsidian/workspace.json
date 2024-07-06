@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
+                "file": "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
+                "file": "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
+                "file": "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md"
+                "file": "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md"
               }
             }
           },
@@ -160,9 +160,15 @@
   },
   "active": "12ab00290c96277a",
   "lastOpenFiles": [
-    "OSCP/Misc/Bash and SH Commands.md",
     "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
+    "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
+    "OSCP/Misc/Setup dns server.md",
     "OSCP/Port Redirection & SSH Tunnelling/Port Forwarding.md",
+    "OSCP/Tunneling through Deep Packet Inspection/HTTP Tunneling.md",
+    "OSCP/Port Redirection & SSH Tunnelling/Windows Tools PF.md",
+    "OSCP/Tunneling through Deep Packet Inspection",
+    "OSCP/Misc/Transferring Files & Executing files.md",
+    "OSCP/Misc/Bash and SH Commands.md",
     "OSCP/PrivEsc/Linux/Insecure System Components.md",
     "OSCP/Port Redirection & SSH Tunnelling",
     "OSCP/PrivEsc/Linux/Enumeration.md",
@@ -180,14 +186,9 @@
     "OSCP/PrivEsc/Windows/Scheduled Tasks.md",
     "OSCP/PrivEsc/Windows/Enumeration.md",
     "OSCP/Misc/PowerShell Commands.md",
-    "OSCP/Misc/Transferring Files & Executing files.md",
     "OSCP/Public Exploits/Online Resources.md",
     "OSCP/Public Exploits/Offline Resources.md",
     "OSCP/PrivEsc/Windows/Changing Users (remote and local).md",
-    "OSCP/Misc/IP Tables.md",
-    "OSCP/Misc/ftp.md",
-    "OSCP/Misc/Custom Binaries.md",
-    "OSCP/Misc/CMD.md",
     "Pasted image 20240315134801.png",
     "Robotic programming",
     "OSCP/PrivEsc/Linux",
@@ -196,7 +197,6 @@
     "OSCP/NTLM",
     "OSCP/Bruteforce",
     "OSCP/Antivirus Evasion",
-    "OSCP/Public Exploits/Fixing Exploits",
     "images/Pasted image 20230823162651.png",
     "images/Pasted image 20230725150046.png",
     "images/Pasted image 20230823161700.png",

