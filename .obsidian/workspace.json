@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
+                "file": "OSCP/Active Directory/Enumeration.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
+                "file": "OSCP/Active Directory/Enumeration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
+                "file": "OSCP/Active Directory/Enumeration.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md"
+                "file": "OSCP/Active Directory/Enumeration.md"
               }
             }
           },
@@ -160,8 +160,10 @@
   },
   "active": "12ab00290c96277a",
   "lastOpenFiles": [
-    "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
     "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
+    "OSCP/Active Directory/Enumeration.md",
+    "OSCP/Active Directory",
+    "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
     "OSCP/Misc/Setup dns server.md",
     "OSCP/Port Redirection & SSH Tunnelling/Port Forwarding.md",
     "OSCP/Tunneling through Deep Packet Inspection/HTTP Tunneling.md",
@@ -188,7 +190,6 @@
     "OSCP/Misc/PowerShell Commands.md",
     "OSCP/Public Exploits/Online Resources.md",
     "OSCP/Public Exploits/Offline Resources.md",
-    "OSCP/PrivEsc/Windows/Changing Users (remote and local).md",
     "Pasted image 20240315134801.png",
     "Robotic programming",
     "OSCP/PrivEsc/Linux",
@@ -196,7 +197,6 @@
     "OSCP/PrivEsc",
     "OSCP/NTLM",
     "OSCP/Bruteforce",
-    "OSCP/Antivirus Evasion",
     "images/Pasted image 20230823162651.png",
     "images/Pasted image 20230725150046.png",
     "images/Pasted image 20230823161700.png",
