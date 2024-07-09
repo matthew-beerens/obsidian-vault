@@ -162,6 +162,7 @@
   "lastOpenFiles": [
     "OSCP/Active Directory/Manual Enumeration.md",
     "OSCP/Active Directory/Automated Enumeration.md",
+    "OSCP/Misc/Transferring Files & Executing files.md",
     "OSCP/Active Directory/Untitled",
     "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
     "OSCP/Active Directory",
@@ -171,7 +172,6 @@
     "OSCP/Tunneling through Deep Packet Inspection/HTTP Tunneling.md",
     "OSCP/Port Redirection & SSH Tunnelling/Windows Tools PF.md",
     "OSCP/Tunneling through Deep Packet Inspection",
-    "OSCP/Misc/Transferring Files & Executing files.md",
     "OSCP/Misc/Bash and SH Commands.md",
     "OSCP/PrivEsc/Linux/Insecure System Components.md",
     "OSCP/Port Redirection & SSH Tunnelling",

