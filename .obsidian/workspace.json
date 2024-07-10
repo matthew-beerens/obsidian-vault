@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OSCP/Active Directory/Automated Enumeration.md",
+                "file": "OSCP/Active Directory/Attacking.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP/Active Directory/Automated Enumeration.md",
+                "file": "OSCP/Active Directory/Attacking.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP/Active Directory/Automated Enumeration.md",
+                "file": "OSCP/Active Directory/Attacking.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP/Active Directory/Automated Enumeration.md"
+                "file": "OSCP/Active Directory/Attacking.md"
               }
             }
           },
@@ -160,10 +160,11 @@
   },
   "active": "12ab00290c96277a",
   "lastOpenFiles": [
-    "OSCP/Active Directory/Manual Enumeration.md",
-    "OSCP/Active Directory/Automated Enumeration.md",
+    "OSCP/Active Directory/enumeration/Automated Enumeration.md",
+    "OSCP/Active Directory/Attacking.md",
+    "OSCP/Active Directory/enumeration",
+    "OSCP/Active Directory/enumeration/Manual Enumeration.md",
     "OSCP/Misc/Transferring Files & Executing files.md",
-    "OSCP/Active Directory/Untitled",
     "OSCP/Tunneling through Deep Packet Inspection/DNS Tunneling.md",
     "OSCP/Active Directory",
     "OSCP/Port Redirection & SSH Tunnelling/SSH Tunneling.md",
@@ -190,7 +191,6 @@
     "OSCP/PrivEsc/Windows/Scheduled Tasks.md",
     "OSCP/PrivEsc/Windows/Enumeration.md",
     "OSCP/Misc/PowerShell Commands.md",
-    "OSCP/Public Exploits/Online Resources.md",
     "Pasted image 20240315134801.png",
     "Robotic programming",
     "OSCP/PrivEsc/Linux",
