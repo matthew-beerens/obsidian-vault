@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OSCP/Active Directory/Lateral Movement.md",
+                "file": "OSCP/Active Directory/Persistence.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP/Active Directory/Lateral Movement.md",
+                "file": "OSCP/Active Directory/Persistence.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP/Active Directory/Lateral Movement.md",
+                "file": "OSCP/Active Directory/Persistence.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP/Active Directory/Lateral Movement.md"
+                "file": "OSCP/Active Directory/Persistence.md"
               }
             }
           },
@@ -160,8 +160,9 @@
   },
   "active": "12ab00290c96277a",
   "lastOpenFiles": [
-    "OSCP/Active Directory/Attacking.md",
     "OSCP/Active Directory/Lateral Movement.md",
+    "OSCP/Active Directory/Persistence.md",
+    "OSCP/Active Directory/Attacking.md",
     "OSCP/Active Directory/enumeration/Manual Enumeration.md",
     "OSCP/Active Directory/enumeration/Automated Enumeration.md",
     "OSCP/Bruteforce/Cracking.md",
@@ -190,7 +191,6 @@
     "OSCP/NTLM/Extract & Crack Net-NTLMv2.md",
     "OSCP/PrivEsc/Windows/Services.md",
     "OSCP/PrivEsc/Windows/Scheduled Tasks.md",
-    "OSCP/PrivEsc/Windows/Enumeration.md",
     "Pasted image 20240315134801.png",
     "Robotic programming",
     "OSCP/PrivEsc/Linux",
