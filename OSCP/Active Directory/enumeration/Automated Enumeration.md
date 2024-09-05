@@ -15,12 +15,15 @@ You will see the initial password as part of the docker-compose output:
 Initial Password Set To:    hXkCJlCM7VMDymtCfZ6PcAiRWdpYWu7q
 ```
 
+go to localhost:8080/ui/login
 ```
 login: admin
-password: usual password after reset
+password: usual password after reset (*************$)
 ```
 
 once logged in click on the settings cog and click `download collectors`
+
+upload file in /ui/administration/file-ingest
 
 #### Using Sharphound
 

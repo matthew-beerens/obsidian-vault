@@ -83,3 +83,9 @@ We should look in the `settings>Apps>Apps & features` for any password managers,
 `/home/user/.ssh/id_rsa` - location of private key
 
 
+### /etc/shadow
+
+1. copy /etc/passwd > passwd.txt
+2. copy /etc/shadow > shadow.txt
+3. unshadow passwd.txt shadow.txt > unshadow.txt
+4. john --format=crypt --wordlist=/usr/share/wordlists/rockyou.txt unshadow.txt
