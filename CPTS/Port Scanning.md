@@ -152,6 +152,53 @@ sudo nmap 10.129.2.28 -p 80 -A
 sudo nmap 10.129.2.28 -p 80 -sV --script vuln
 
 ```
+
+# Performance
+
+Performance can play a significant role when attempting to scan a big network or a network with low network bandwidth.
+
+Some flags to assist with this include:
+- `-T <0-5>` how fast
+- `--min-parallelism <num>` the frequency
+- `--max-rtt-timeout <time>` the timeout duration test packets should have (default 100ms)
+- `--min-rate <num>` how many packets to send simultaneously
+- `--max-retries` number of retries to attempt
+
+## Round Trip Timeout
+
+The default round trip timeout (RTT) for nmap is 100s.
+
+RTT is important to get right because if it is too small a value it could cause us to miss out on hosts on the network. Too large and the scan will take a long time.
+
+## Max Retries
+
+The max retry rate for nmap is 10. reducing this number will speed up the scan - but at the risk of missing hosts.
+
+We could adjust this to be a smaller number in an attempt to increase performance but its probably not a good idea to set it to 0.
+
+## Rates
+
+Increasing the min rate of our nmap scan can increasingly improve the performance of our scan as it send packets simultaneously and maintains the set rate.
+
+If we know the bandwidth of the network we are testing on we can work with the bandwidth to optimize our min-rate.
+
+This doesn't seem to impact accuracy of scans but could affect network performance. 
+
+
+## Timing
+
+Nmap has 6 different timing templates for `-T`:
+- 0 - paranoid
+- 1 - sneaky
+- 2 - polite
+- 3 - normal
+- 4 - aggressive
+- 5 - insane
+
+these templates contain options that we can set manually, but these templates contain values the developers determined had the best results.
+
+more info: https://nmap.org/book/performance-timing-templates.html
+
 # Additional
 
 we can generate HTML output of the nmap scan by generating XML output with `-oX` and then generating the html with:

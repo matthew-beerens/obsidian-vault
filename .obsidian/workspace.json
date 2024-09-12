@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OSCP/SQLi/Blind SQLi.md",
+                "file": "CPTS/Footprinting.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSCP/SQLi/Blind SQLi.md",
+                "file": "CPTS/Footprinting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSCP/SQLi/Blind SQLi.md",
+                "file": "CPTS/Footprinting.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSCP/SQLi/Blind SQLi.md"
+                "file": "CPTS/Footprinting.md"
               }
             }
           },
@@ -160,8 +160,13 @@
   },
   "active": "a392c059fac20793",
   "lastOpenFiles": [
-    "OSCP/SQLi/Identify SQLi.md",
+    "CPTS/Firewall, IDS, IPS Evasion.md",
+    "CPTS/Footprinting.md",
+    "CPTS/Port Scanning.md",
+    "CPTS/Host Discovery.md",
     "OSCP/SQLi/Blind SQLi.md",
+    "CPTS",
+    "OSCP/SQLi/Identify SQLi.md",
     "OSCP/PrivEsc/Windows/Enumeration.md",
     "OSCP/Active Directory/enumeration/Manual Enumeration.md",
     "OSCP/Active Directory/Persistence.md",
@@ -182,10 +187,6 @@
     "OSCP/SQLi/MSSQL RCE & injection.md",
     "OSCP/SQLi/Union SQLi.md",
     "OSCP/PrivEsc/Windows/Windows Privileges and Access Control Mechanisms.md",
-    "OSCP/PrivEsc/Windows/Scheduled Tasks.md",
-    "OSCP/PrivEsc/Windows/Exploits.md",
-    "OSCP/SQLi/SLQMap.md",
-    "OSCP/Bruteforce/Hydra.md",
     "OSCP/Active Directory/enumeration",
     "OSCP/Active Directory",
     "OSCP/Tunneling through Deep Packet Inspection",
@@ -196,7 +197,6 @@
     "OSCP/PrivEsc/Linux",
     "OSCP/PrivEsc/Windows",
     "OSCP/PrivEsc",
-    "OSCP/NTLM",
     "images/Pasted image 20230823162651.png",
     "images/Pasted image 20230725150046.png",
     "images/Pasted image 20230823161700.png",
