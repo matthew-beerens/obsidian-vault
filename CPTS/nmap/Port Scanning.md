@@ -153,6 +153,21 @@ sudo nmap 10.129.2.28 -p 80 -sV --script vuln
 
 ```
 
+We can update the NSE with:
+```
+sudo nmap --script-updatedb
+```
+
+We can find specific scripts using cli and grep:
+```
+find / -type f -name ftp* 2>/dev/null | grep scripts
+```
+
+```
+ls /usr/share/nmap/scripts | grep ftp*
+```
+
+We can use `--script-trace` to trace progress of nmap scripts.
 # Performance
 
 Performance can play a significant role when attempting to scan a big network or a network with low network bandwidth.

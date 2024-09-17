@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CPTS/Footprinting.md",
+                "file": "CPTS/FTP.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CPTS/Footprinting.md",
+                "file": "CPTS/FTP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CPTS/Footprinting.md",
+                "file": "CPTS/FTP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CPTS/Footprinting.md"
+                "file": "CPTS/FTP.md"
               }
             }
           },
@@ -160,10 +160,13 @@
   },
   "active": "a392c059fac20793",
   "lastOpenFiles": [
-    "CPTS/Firewall, IDS, IPS Evasion.md",
     "CPTS/Footprinting.md",
-    "CPTS/Port Scanning.md",
-    "CPTS/Host Discovery.md",
+    "CPTS/nmap/Port Scanning.md",
+    "CPTS/nmap/Host Discovery.md",
+    "CPTS/FTP.md",
+    "CPTS/nmap/Domain.md",
+    "CPTS/nmap/Firewall, IDS, IPS Evasion.md",
+    "CPTS/nmap",
     "OSCP/SQLi/Blind SQLi.md",
     "CPTS",
     "OSCP/SQLi/Identify SQLi.md",
@@ -185,8 +188,6 @@
     "OSCP/SQLi/MySQL RCE.md",
     "OSCP/SQLi/SQL Connections and Interaction.md",
     "OSCP/SQLi/MSSQL RCE & injection.md",
-    "OSCP/SQLi/Union SQLi.md",
-    "OSCP/PrivEsc/Windows/Windows Privileges and Access Control Mechanisms.md",
     "OSCP/Active Directory/enumeration",
     "OSCP/Active Directory",
     "OSCP/Tunneling through Deep Packet Inspection",
@@ -196,7 +197,6 @@
     "Robotic programming",
     "OSCP/PrivEsc/Linux",
     "OSCP/PrivEsc/Windows",
-    "OSCP/PrivEsc",
     "images/Pasted image 20230823162651.png",
     "images/Pasted image 20230725150046.png",
     "images/Pasted image 20230823161700.png",
