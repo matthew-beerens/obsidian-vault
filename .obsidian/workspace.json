@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CPTS/FTP.md",
+                "file": "CPTS/footprinting/NFS.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CPTS/FTP.md",
+                "file": "CPTS/footprinting/NFS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CPTS/FTP.md",
+                "file": "CPTS/footprinting/NFS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CPTS/FTP.md"
+                "file": "CPTS/footprinting/NFS.md"
               }
             }
           },
@@ -160,10 +160,14 @@
   },
   "active": "a392c059fac20793",
   "lastOpenFiles": [
-    "CPTS/Footprinting.md",
+    "CPTS/footprinting/SMB.md",
+    "CPTS/footprinting/NFS.md",
+    "CPTS/footprinting/FTP.md",
+    "CPTS/footprinting",
+    "CPTS/nmap/Untitled",
+    "CPTS/footprinting/Footprinting.md",
     "CPTS/nmap/Port Scanning.md",
     "CPTS/nmap/Host Discovery.md",
-    "CPTS/FTP.md",
     "CPTS/nmap/Domain.md",
     "CPTS/nmap/Firewall, IDS, IPS Evasion.md",
     "CPTS/nmap",
@@ -186,8 +190,6 @@
     "OSCP/Active Directory/Lateral Movement.md",
     "OSCP/Misc/Transferring Files & Executing files.md",
     "OSCP/SQLi/MySQL RCE.md",
-    "OSCP/SQLi/SQL Connections and Interaction.md",
-    "OSCP/SQLi/MSSQL RCE & injection.md",
     "OSCP/Active Directory/enumeration",
     "OSCP/Active Directory",
     "OSCP/Tunneling through Deep Packet Inspection",
@@ -195,8 +197,6 @@
     "OSCP/PrivEsc/Linux",
     "Pasted image 20240315134801.png",
     "Robotic programming",
-    "OSCP/PrivEsc/Linux",
-    "OSCP/PrivEsc/Windows",
     "images/Pasted image 20230823162651.png",
     "images/Pasted image 20230725150046.png",
     "images/Pasted image 20230823161700.png",
