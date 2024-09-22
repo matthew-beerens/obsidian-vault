@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CPTS/footprinting/NFS.md",
+                "file": "CPTS/footprinting/DNS.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CPTS/footprinting/NFS.md",
+                "file": "CPTS/footprinting/DNS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CPTS/footprinting/NFS.md",
+                "file": "CPTS/footprinting/DNS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CPTS/footprinting/NFS.md"
+                "file": "CPTS/footprinting/DNS.md"
               }
             }
           },
@@ -158,10 +158,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a392c059fac20793",
+  "active": "749314899e7cc4b5",
   "lastOpenFiles": [
-    "CPTS/footprinting/SMB.md",
+    "CPTS/footprinting/Pasted image 20240922143547.png",
     "CPTS/footprinting/NFS.md",
+    "CPTS/footprinting/DNS.md",
+    "CPTS/footprinting/SMB.md",
     "CPTS/footprinting/FTP.md",
     "CPTS/footprinting",
     "CPTS/nmap/Untitled",
@@ -188,8 +190,6 @@
     "OSCP/Bruteforce/Cracking.md",
     "OSCP/PrivEsc/Windows/Changing Users (remote and local).md",
     "OSCP/Active Directory/Lateral Movement.md",
-    "OSCP/Misc/Transferring Files & Executing files.md",
-    "OSCP/SQLi/MySQL RCE.md",
     "OSCP/Active Directory/enumeration",
     "OSCP/Active Directory",
     "OSCP/Tunneling through Deep Packet Inspection",
